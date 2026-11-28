@@ -8,23 +8,45 @@ export const ctaLabel = 'Pedí un diagnóstico';
 export const callConsent =
   'Quiero que Agent Crew me llame a este teléfono para coordinar el diagnóstico.';
 
+export const navCtaLabel = 'Probar en vivo';
+
 export const navLinks = [
+  { label: 'Agentes', href: '#modulos' },
   { label: 'Cómo funciona', href: '#como-funciona' },
-  { label: 'Módulos', href: '#modulos' },
-  { label: 'Beneficios', href: '#beneficios' },
-  { label: 'Comparador', href: '#comparador' },
-  { label: 'Contacto', href: '#contacto' },
+  { label: 'FAQ', href: '#faq' },
 ] as const;
 
 export const hero = {
-  kickerTop: 'AGENTES DE IA',
-  brandDisplay: 'AGENT CREW',
-  brandLetters: ['A', 'G', 'E', 'N', 'T', ' ', 'C', 'R', 'E', 'W'] as const,
-  kickerBottom: 'PARA EMPRESAS',
-  description:
-    'Implementamos agentes de IA para empresas por etapas, con una persona de nuestro equipo al lado en cada paso.',
-  ctaHref: '#contacto',
-  ctaArrowLabel: 'Ir al pedido de diagnóstico',
+  eyebrow: 'Agentes de IA para empresas',
+  title: 'Multiplicá la capacidad de tu negocio con agentes de IA 24/7.',
+  subtitleLead:
+    'Desde llamadas y WhatsApp hasta facturación, cobranzas y control de stock:',
+  subtitleMiddle: 'automatizamos tu operación',
+  subtitleAccent: 'por etapas, con acompañamiento humano en cada paso.',
+  primaryCtaLabel: 'Probá el agente por teléfono',
+  secondaryCtaLabel: ctaLabel,
+  secondaryCtaHref: '#contacto',
+  trustNote: 'Implementación por etapas · Sin equipo técnico interno',
+  liveDemoModal: {
+    eyebrow: 'Prueba en vivo',
+    title: 'Probá el agente por teléfono',
+    description:
+      'Dejanos tu nombre y teléfono y uno de nuestros agentes de IA te llama en segundos para que lo pruebes en una conversación real.',
+    nameLabel: 'Nombre',
+    namePlaceholder: 'Ej. Lucía Fernández',
+    phoneLabel: 'Teléfono',
+    phonePlaceholder: '+54 9 11 5555-1234',
+    phoneHelp: 'Incluí código de país y área (ej. +54 9 11 5555-1234).',
+    submitLabel: 'Recibir llamada ahora',
+    submittingLabel: 'Iniciando llamada…',
+    privacyNote: 'Solo usamos tu número para esta llamada de prueba.',
+    sentTitlePrefix: '¡Listo, ',
+    sentTitleSuffix: '! Te estamos llamando',
+    sentBodyPrefix: 'Nuestro agente de IA está llamando al ',
+    sentBodySuffix: '. Atendé para probar la conversación en vivo.',
+    closeLabel: 'Cerrar',
+    diagnosticFallbackLabel: '¿Preferís un diagnóstico completo?',
+  },
   scrollStampText: 'EXPLORAR · POR ETAPAS · DIAGNÓSTICO · ',
   scrollStampLabel: 'Bajar al contenido principal',
   scrollStampHref: '#contenido',
@@ -34,11 +56,6 @@ export const hero = {
     pauseLabel: 'Pausar la animación',
     playLabel: 'Reproducir la animación',
   },
-  quickLinks: [
-    { label: 'Cómo funciona', href: '#como-funciona', icon: 'layers' as const },
-    { label: 'Módulos', href: '#modulos', icon: 'workflow' as const },
-    { label: 'Pedí un diagnóstico', href: '#contacto', icon: 'send' as const },
-  ],
   instagram: {
     label: 'Agent Crew en Instagram',
     href: 'https://www.instagram.com/agentcrew.cloud/',
@@ -211,107 +228,52 @@ export const stagesSection = {
   closingCtaHref: '#contacto',
 } as const;
 
-export const calculatorSection = {
-  id: 'comparador',
-  eyebrow: 'Comparador de costos',
-  title: 'Estimá el costo de un puesto tradicional frente a Agent Crew.',
-  lead: 'Ajustá la jornada, las horas efectivas de trabajo y el sueldo para comparar el costo real por hora operativa contra una estimación referencial del servicio.',
-  inputs: {
-    workdayLabel: 'Jornada laboral diaria',
-    workdayPresets: [
-      { id: 'part', label: 'Media (4 h)', hours: 4, defaultEffective: 3.5 },
-      { id: 'full', label: 'Completa (8 h)', hours: 8, defaultEffective: 6 },
-      { id: 'ext', label: 'Extendida (9 h)', hours: 9, defaultEffective: 6.5 },
-    ],
-    workdaysPerMonthLabel: 'Días hábiles por mes',
-    effectiveHoursLabel: 'Horas efectivas de trabajo por día',
-    effectiveHoursHelp:
-      'Descontando pausas, reuniones internas, cambios de tarea y tiempos sin demanda.',
-    salaryLabel: 'Sueldo neto mensual estimado ($ ARS)',
-    socialChargesLabel: 'Cargas sociales y costos laborales adicionales (%)',
-    socialChargesHelp:
-      'Aportes, contribuciones, ART, aguinaldo proporcional y estructura asociada.',
-    serviceLabel: 'Costo aproximado mensual de Agent Crew ($ ARS)',
-    servicePresets: [
-      { id: 'm1', label: '1 módulo', monthly: 350000 },
-      { id: 'm2', label: '2 módulos', monthly: 550000 },
-      { id: 'm3', label: '3 módulos', monthly: 750000 },
-    ],
-    serviceHelp:
-      'Valor referencial orientativo para comparar escenarios; el presupuesto exacto surge del diagnóstico.',
-  },
-  results: {
-    employeeTitle: 'Puesto tradicional',
-    employeeSubtitleSuffix: 'h efectivas/mes',
-    serviceTitle: 'Agent Crew (24/7)',
-    serviceSubtitle: '720 h/mes · atención simultánea',
-    monthlyCostLabel: 'Costo mensual total',
-    hourlyCostLabel: 'Costo por hora efectiva',
-    savingsTitle: 'Diferencia mensual estimada',
-    savingsAnnualLabel: 'Proyección anual',
-    savingsPositiveSuffix: 'de ahorro estimado por mes',
-    savingsNegativeNote:
-      'Con estos parámetros el servicio cubre 24/7 con mayor capacidad por una inversión mensual superior al sueldo ingresado.',
-    coverageComparisonLabel: 'Cobertura operativa mensual',
-    disclaimer:
-      'Cálculo orientativo en pesos argentinos. Podés editar cualquier monto o porcentaje para reflejar la estructura real de tu empresa.',
-    ctaLabel: 'Pedí tu presupuesto exacto',
-  },
-} as const;
-
 export const contactForm = {
-  eyebrow: 'Contacto',
-  title: 'Pedí un diagnóstico',
+  badge: 'PRUEBA EN VIVO',
+  title: 'Probalo ahora mismo en tu propio teléfono',
   subtitle:
-    'Contanos qué proceso querés ordenar primero y coordinamos una charla para evaluarlo por etapas.',
-  liveCallDemo: {
-    title: 'Probalo en vivo con tu propio teléfono',
-    body: 'Si dejás tu número y marcás la casilla de llamada, uno de nuestros agentes de IA te va a llamar por teléfono para coordinar el diagnóstico y que puedas probar el producto en una conversación real.',
-    whatsappNote:
-      'Si dejás tu teléfono y no marcás la casilla, uno de nuestros agentes te va a escribir por WhatsApp para brindarte más información y que puedas probar el servicio de primera mano.',
-  },
+    'Dejanos tus datos, elegí si preferís llamada o WhatsApp y comprobá cómo responde nuestro agente de IA en una conversación real.',
+  highlights: [
+    'Respuesta en segundos',
+    'Acompañamiento humano en cada etapa',
+    'Usamos tus datos solo para responderte',
+  ],
   fields: {
     name: {
       label: 'Nombre y apellido',
-      placeholder: 'Ej. Lucía Fernández',
+      placeholder: 'Ej: Laura Gómez',
     },
     email: {
-      label: 'Email laboral',
-      placeholder: 'lucia@tuempresa.com',
-    },
-    company: {
-      label: 'Empresa',
-      placeholder: 'Nombre de tu empresa',
+      label: 'Email',
+      placeholder: 'laura@tuempresa.com',
     },
     phone: {
       label: 'Teléfono',
-      optionalSuffix: '(opcional)',
-      placeholder: '+54 9 11 5555-1234',
-      areaLabel: 'Provincia / código de área',
-      areaPlaceholder: 'Elegí tu provincia para autocompletar',
-      help: 'Incluí código de país (+54), código de área/provincia y número sin 0 ni 15.',
+      prefix: '🇦🇷 +54 9',
+      placeholder: '11 2345-6789',
     },
-    phoneType: {
-      legend: '¿Es un celular o un teléfono fijo?',
-      mobile: 'Celular',
-      landline: 'Fijo',
-    },
-    topic: {
-      label: 'Área principal a evaluar',
-      emptyOption: 'Todavía no lo sé',
-    },
-    message: {
-      label: 'Contanos qué te gustaría resolver',
-      placeholder: 'Describí brevemente el volumen de consultas, herramientas que usan o el cuello de botella actual.',
-      help: 'Con dos o tres líneas alcanza para preparar el diagnóstico.',
+    preference: {
+      legend: '¿Cómo preferís probarlo?',
+      options: {
+        call: {
+          title: 'Quiero que el agente me llame',
+          description: 'Probá la voz en vivo y coordiná tu diagnóstico.',
+          ctaLabel: 'Recibir llamada de prueba',
+          submittingLabel: 'Iniciando llamada…',
+        },
+        whatsapp: {
+          title: 'Prefiero que me escriba por WhatsApp',
+          description: 'Chateá con el agente para recibir información.',
+          ctaLabel: 'Recibir WhatsApp de prueba',
+          submittingLabel: 'Enviando WhatsApp…',
+        },
+      },
     },
   },
-  privacyNote: 'Usamos tus datos sólo para responderte.',
-  submittingLabel: 'Enviando…',
   errorSummary: {
-    single: 'Revisá 1 campo para enviar tu pedido',
+    single: 'Revisá 1 campo para continuar',
     pluralPrefix: 'Revisá ',
-    pluralSuffix: ' campos para enviar tu pedido',
+    pluralSuffix: ' campos para continuar',
   },
   notices: {
     rate_limited:
@@ -320,17 +282,15 @@ export const contactForm = {
       'En este momento no pudimos procesar el envío. Intentá nuevamente en unos minutos.',
   },
   sent: {
-    title: 'Recibimos tu pedido de diagnóstico',
-    withEmailPrefix: 'Te escribimos a ',
-    withEmailSuffix: ' para coordinar la llamada.',
-    withoutEmail: 'Te escribimos a la brevedad para coordinar la llamada.',
-    nextTitle: 'Qué sigue',
-    steps: [
-      'Revisamos el contexto que compartiste sobre tu empresa.',
-      'Te contactamos para acordar día y horario de la reunión de diagnóstico.',
-      'Definimos juntos si conviene avanzar con una primera etapa acotada.',
-    ],
-    resetLabel: 'Enviar otro pedido',
+    callTitlePrefix: '¡Listo, ',
+    callTitleSuffix: '! Te estamos llamando',
+    callBodyPrefix: 'Nuestro agente de IA está llamando al ',
+    callBodySuffix: '. Atendé para probar la conversación en vivo.',
+    whatsappTitlePrefix: '¡Listo, ',
+    whatsappTitleSuffix: '! Revisá tu WhatsApp',
+    whatsappBodyPrefix: 'Nuestro agente de IA te está escribiendo al ',
+    whatsappBodySuffix: ' para que puedas probarlo en tiempo real.',
+    resetLabel: 'Probar con otro número',
   },
 } as const;
 
