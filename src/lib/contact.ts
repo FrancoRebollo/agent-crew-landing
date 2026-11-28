@@ -1,22 +1,21 @@
-export const contactAreas = [
-  'Atención al cliente',
-  'Ventas y seguimiento',
-  'Operaciones',
-  'Administración y cobranzas',
-] as const;
+export type ContactField = 'name' | 'email' | 'phone';
 
-export type ContactField = 'name' | 'email' | 'company' | 'phone' | 'topic' | 'message';
+export type ContactChannel = 'call' | 'whatsapp';
 
 export type ContactErrors = Partial<Record<ContactField, string>>;
 
 export type ContactState =
   | { status: 'idle' }
   | { status: 'sent' }
-  | { status: 'invalid'; errors: ContactErrors; askPhoneType?: boolean }
+  | { status: 'invalid'; errors: ContactErrors }
   | { status: 'rate_limited' }
   | { status: 'unavailable' };
 
-export const contactLimits = { name: 120, email: 254, company: 120, phone: 40, message: 4000 } as const;
+export const contactLimits = {
+  name: 120,
+  email: 254,
+  phone: 40,
+} as const;
 
 export const honeypotField = 'website';
 export const callRequestedField = 'call_requested';

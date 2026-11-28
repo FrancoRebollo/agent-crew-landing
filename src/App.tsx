@@ -1,6 +1,5 @@
 import { BackgroundVideoProvider } from './components/BackgroundVideo';
 import { Benefits } from './components/Benefits';
-import { Calculator } from './components/Calculator';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 import { Hero } from './components/Hero';
@@ -27,7 +26,6 @@ export default function App() {
           <Modules />
           <Benefits />
           <Stages />
-          <Calculator />
           <Contact />
         </main>
 
